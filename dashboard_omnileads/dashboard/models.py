@@ -35,8 +35,8 @@ class OminicontactoAppCampana(models.Model):
 
 
 class OminicontactoAppCampanaSupervisors(models.Model):
-    campana = models.ForeignKey('OminicontactoAppCampana', models.DO_NOTHING)
-    user = models.ForeignKey('OminicontactoAppUser', models.DO_NOTHING)
+    campana = models.ForeignKey('OminicontactoAppCampana', on_delete=models.DO_NOTHING)
+    user = models.ForeignKey('OminicontactoAppUser', on_delete=models.DO_NOTHING)
 
     objects = OmnileadsManager()
 
@@ -47,7 +47,7 @@ class OminicontactoAppCampanaSupervisors(models.Model):
 
 class OminicontactoAppAgenteprofile(models.Model):
     id = models.IntegerField(primary_key=True)
-    user = models.OneToOneField('OminicontactoAppUser', models.DO_NOTHING, related_name='ominicontactoappagenteprofile_user_set')
+    user = models.OneToOneField('OminicontactoAppUser', on_delete=models.DO_NOTHING)
 
     objects = OmnileadsManager()
 
